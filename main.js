@@ -11,7 +11,7 @@ $(document).on('ready', function() {
     // Bonus 1, part 1
     var promptNotes = prompt("Enter a note to be saved with your marker");
 
-    var textarea = $("<textarea class='notes'></textarea>").append(promptNotes);
+    var textarea = $("<div class='notes'></div>").append(promptNotes);
     textarea.css({position: "absolute", top: y, left: x+40});
 
   	$(".container").append(marker);
@@ -24,7 +24,7 @@ $(document).on('ready', function() {
           $(".container").append(textarea);
         },
         function () {
-          $(".container").find("textarea:last").remove();
+          $(".container").find("div:last").remove();
         }
       );
 
