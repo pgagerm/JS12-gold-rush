@@ -8,13 +8,25 @@ $(document).on('ready', function() {
   	var marker = $("<div class='mapclass'>you are here</div>");
   	marker.css({position: "absolute", top: y, left: x});
 
-    // Bonus 1
+    // Bonus 1, part 1
     var promptNotes = prompt("Enter a note to be saved with your marker");
 
     var textarea = $("<textarea class='notes'></textarea>").append(promptNotes);
     textarea.css({position: "absolute", top: y, left: x+40});
 
-  	$(".container").append(marker, textarea);
+  	$(".container").append(marker);
+
+     // Bonus 1, part 2
+    // var showNotes = $(".container").append(textarea);
+
+    $(marker).hover(
+        function () {
+          $(".container").append(textarea);
+        },
+        function () {
+          $(".container").find("textarea:last").remove();
+        }
+      );
 
   	$(document).on("click", function() {
   		$(marker).remove();
