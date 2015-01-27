@@ -1,0 +1,14 @@
+.map {
+	height: 100%;
+	width: 100%;
+}
+
+.mapclass {
+	border-radius: 20px;
+	height: 20px;
+	width: 20px;
+	color: yellow;
+	
+
+}
+
