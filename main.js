@@ -8,12 +8,18 @@ $(document).on('ready', function() {
   	var marker = $("<div class='mapclass'>you are here</div>");
   	marker.css({position: "absolute", top: y, left: x});
 
-  	$(".container").append(marker);
+    // Bonus 1
+    var promptNotes = prompt("Enter a note to be saved with your marker");
+
+    var textarea = $("<textarea class='notes'></textarea>").append(promptNotes);
+    textarea.css({position: "absolute", top: y, left: x+40});
+
+  	$(".container").append(marker, textarea);
+
   	$(document).on("click", function() {
   		$(marker).remove();
+      $(textarea).remove();
 
-      // TEST for contributor
-    
   	});
 	});
 });
