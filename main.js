@@ -11,6 +11,9 @@ $(document).on('ready', function() {
   	$(".container").append(marker);
   	$(document).on("click", function() {
   		$(marker).remove();
+
+      // TEST for contributor
+    
   	});
 	});
 });
